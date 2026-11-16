@@ -1,0 +1,119 @@
+2026-10-06 08:00:00.001 INFO  [main] Application starting...
+2026-10-06 08:00:00.125 INFO  [main] Application version: 3.8.2
+2026-10-06 08:00:00.145 INFO  [main] Environment: production
+2026-10-06 08:00:00.210 INFO  [main] Loading application configuration
+2026-10-06 08:00:00.245 DEBUG [main] Config file loaded: application.yml
+2026-10-06 08:00:00.310 INFO  [main] Initializing database connection pool
+2026-10-06 08:00:00.512 INFO  [main] Database connection established
+2026-10-06 08:00:00.530 DEBUG [main] Database pool size: 20
+2026-10-06 08:00:00.601 INFO  [main] Redis connection established
+2026-10-06 08:00:00.650 INFO  [main] HTTP server starting on port 8080
+2026-10-06 08:00:00.710 INFO  [main] Application started successfully
+
+2026-10-06 08:01:02.101 INFO  [http-nio-8080-exec-1] Request received: GET /api/users
+2026-10-06 08:01:02.105 DEBUG [http-nio-8080-exec-1] Request ID: req-8f21a1
+2026-10-06 08:01:02.120 DEBUG [http-nio-8080-exec-1] Authenticating request
+2026-10-06 08:01:02.145 INFO  [http-nio-8080-exec-1] Authentication successful: user_id=10045
+2026-10-06 08:01:02.180 DEBUG [http-nio-8080-exec-1] Executing query: SELECT users
+2026-10-06 08:01:02.215 INFO  [http-nio-8080-exec-1] Users fetched successfully
+2026-10-06 08:01:02.230 INFO  [http-nio-8080-exec-1] Response status=200 duration=129ms
+
+2026-10-06 08:03:44.501 INFO  [http-nio-8080-exec-3] Request received: POST /api/login
+2026-10-06 08:03:44.510 DEBUG [http-nio-8080-exec-3] Request ID: req-9c83b7
+2026-10-06 08:03:44.530 DEBUG [http-nio-8080-exec-3] Validating login credentials
+2026-10-06 08:03:44.620 INFO  [http-nio-8080-exec-3] Login successful: user_id=10052
+2026-10-06 08:03:44.635 INFO  [http-nio-8080-exec-3] Session created successfully
+2026-10-06 08:03:44.640 INFO  [http-nio-8080-exec-3] Response status=200 duration=139ms
+
+2026-10-06 08:07:12.004 WARN  [http-nio-8080-exec-5] Slow request detected
+2026-10-06 08:07:12.005 WARN  [http-nio-8080-exec-5] Endpoint: /api/orders
+2026-10-06 08:07:12.006 WARN  [http-nio-8080-exec-5] Response time: 2850ms
+
+2026-10-06 08:10:01.100 INFO  [scheduler-1] Starting scheduled database backup
+2026-10-06 08:10:01.150 DEBUG [scheduler-1] Preparing backup directory
+2026-10-06 08:10:01.250 INFO  [scheduler-1] Backup directory ready
+2026-10-06 08:10:05.820 INFO  [scheduler-1] Database dump created successfully
+2026-10-06 08:10:08.410 INFO  [scheduler-1] Compressing backup file
+2026-10-06 08:10:15.225 INFO  [scheduler-1] Backup compressed successfully
+2026-10-06 08:10:15.240 INFO  [scheduler-1] Backup completed successfully
+
+2026-10-06 08:15:33.901 ERROR [http-nio-8080-exec-8] Database query failed
+2026-10-06 08:15:33.902 ERROR [http-nio-8080-exec-8] Error: Connection timeout
+2026-10-06 08:15:33.903 ERROR [http-nio-8080-exec-8] Database host did not respond within 5000ms
+2026-10-06 08:15:33.904 WARN  [http-nio-8080-exec-8] Attempting database reconnect
+2026-10-06 08:15:34.120 INFO  [http-nio-8080-exec-8] Database connection restored
+2026-10-06 08:15:34.150 INFO  [http-nio-8080-exec-8] Retrying failed request
+2026-10-06 08:15:34.310 INFO  [http-nio-8080-exec-8] Request completed successfully
+
+2026-10-06 08:20:00.001 INFO  [monitor-1] System health check started
+2026-10-06 08:20:00.050 INFO  [monitor-1] CPU usage: 42%
+2026-10-06 08:20:00.051 INFO  [monitor-1] Memory usage: 68%
+2026-10-06 08:20:00.052 INFO  [monitor-1] Disk usage: 74%
+2026-10-06 08:20:00.053 INFO  [monitor-1] Database status: HEALTHY
+2026-10-06 08:20:00.054 INFO  [monitor-1] Redis status: HEALTHY
+2026-10-06 08:20:00.055 INFO  [monitor-1] Health check completed
+
+2026-10-06 08:25:17.220 WARN  [http-nio-8080-exec-11] Authentication failed
+2026-10-06 08:25:17.221 WARN  [http-nio-8080-exec-11] Reason: Invalid credentials
+2026-10-06 08:25:17.222 WARN  [http-nio-8080-exec-11] Failed login attempt count=3
+
+2026-10-06 08:30:45.800 INFO  [http-nio-8080-exec-14] Request received: POST /api/orders
+2026-10-06 08:30:45.810 DEBUG [http-nio-8080-exec-14] Validating order payload
+2026-10-06 08:30:45.840 DEBUG [http-nio-8080-exec-14] Product validation successful
+2026-10-06 08:30:45.900 DEBUG [http-nio-8080-exec-14] Inventory check started
+2026-10-06 08:30:45.950 INFO  [http-nio-8080-exec-14] Inventory available
+2026-10-06 08:30:46.010 INFO  [http-nio-8080-exec-14] Order created successfully: order_id=ORD-784521
+2026-10-06 08:30:46.040 INFO  [http-nio-8080-exec-14] Payment request initiated
+2026-10-06 08:30:46.310 INFO  [http-nio-8080-exec-14] Payment completed successfully
+2026-10-06 08:30:46.350 INFO  [http-nio-8080-exec-14] Order status updated: CONFIRMED 2026-10-06 08:30:46.370 INFO  [http-nio-8080-exec-14] Response status=201 duration=570ms
+
+2026-10-06 08:45:12.400 ERROR [scheduler-2] Failed to send email notification
+2026-10-06 08:45:12.401 ERROR [scheduler-2] SMTP server connection refused
+2026-10-06 08:45:12.402 WARN  [scheduler-2] Email will be retried after 60 seconds
+2026-10-06 08:46:12.510 INFO  [scheduler-2] Retrying email delivery
+2026-10-06 08:46:13.020 INFO  [scheduler-2] Email sent successfully
+
+2026-10-06 09:00:00.100 INFO  [scheduler-3] Daily cleanup job started
+2026-10-06 09:00:00.210 DEBUG [scheduler-3] Removing expired sessions
+2026-10-06 09:00:01.120 INFO  [scheduler-3] Expired sessions removed: 128
+2026-10-06 09:00:01.200 DEBUG [scheduler-3] Removing temporary files
+2026-10-06 09:00:02.450 INFO  [scheduler-3] Temporary files removed: 342
+2026-10-06 09:00:02.500 INFO  [scheduler-3] Cleanup job completed successfully
+
+2026-10-06 09:15:33.700 WARN  [monitor-1] Memory usage is above threshold
+2026-10-06 09:15:33.701 WARN  [monitor-1] Current memory usage: 87%
+2026-10-06 09:15:33.702 WARN  [monitor-1] Threshold: 85%
+2026-10-06 09:15:34.100 INFO  [monitor-1] Garbage collection initiated
+2026-10-06 09:15:35.200 INFO  [monitor-1] Memory usage after GC: 71%
+
+2026-10-06 09:30:00.001 INFO  [main] Configuration refresh started
+2026-10-06 09:30:00.120 DEBUG [main] Reading updated configuration
+2026-10-06 09:30:00.180 INFO  [main] Configuration refreshed successfully
+
+2026-10-06 10:00:00.000 INFO  [scheduler-1] Hourly metrics collection started
+2026-10-06 10:00:00.050 INFO  [scheduler-1] Requests processed: 18452
+2026-10-06 10:00:00.051 INFO  [scheduler-1] Successful requests: 18120
+2026-10-06 10:00:00.052 INFO  [scheduler-1] Failed requests: 332
+2026-10-06 10:00:00.053 INFO  [scheduler-1] Average response time: 184ms
+2026-10-06 10:00:00.054 INFO  [scheduler-1] Metrics collection completed
+
+2026-10-06 10:15:22.600 ERROR [http-nio-8080-exec-21] Unexpected application exception
+2026-10-06 10:15:22.601 ERROR [http-nio-8080-exec-21] Endpoint: /api/reports
+2026-10-06 10:15:22.602 ERROR [http-nio-8080-exec-21] Error: OutOfMemoryError while generating report
+2026-10-06 10:15:22.603 WARN  [http-nio-8080-exec-21] Cancelling report generation
+2026-10-06 10:15:22.650 INFO  [monitor-1] Memory cleanup started
+2026-10-06 10:15:23.500 INFO  [monitor-1] Memory cleanup completed
+2026-10-06 10:15:23.550 INFO  [monitor-1] Current memory usage: 73%
+
+2026-10-06 10:30:00.001 INFO  [scheduler-1] Database health check started
+2026-10-06 10:30:00.020 INFO  [scheduler-1] Active connections: 8
+2026-10-06 10:30:00.021 INFO  [scheduler-1] Idle connections: 12
+2026-10-06 10:30:00.022 INFO  [scheduler-1] Database response time: 24ms
+2026-10-06 10:30:00.023 INFO  [scheduler-1] Database health check passed
+
+2026-10-06 11:00:00.000 INFO  [main] Application is running normally
+2026-10-06 11:00:00.001 INFO  [main] Uptime: 3h 00m 00s
+2026-10-06 11:00:00.002 INFO  [main] Active users: 842
+2026-10-06 11:00:00.003 INFO  [main] Active sessions: 915
+2026-10-06 11:00:00.004 INFO  [main] System status: HEALTHY
+
